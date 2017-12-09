@@ -16,9 +16,9 @@ def main(request):
 def idleline(request):
     return render(request,"UI/idleline.html")
 def runline(request):
-    return render(request,"UI/idleline.html")
+    return render(request,"UI/runline.html")
 def settingline(request):
-    return render(request,"UI/idleline.html")
+    return render(request,"UI/settingline.html")
 def  home(request):
     return render(request,"UI/home.html")
 
@@ -71,3 +71,4 @@ def postdata(request):
         ms = MachineStatus(status=status)
         ms.save()
         JsonResponse(u'updated')
+    JsonResponse(u'error lol')
