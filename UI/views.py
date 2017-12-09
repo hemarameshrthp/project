@@ -33,7 +33,7 @@ def settingline(request):
 
 def  home(request):
     return render(request,"UI/home.html")
-@login_required(login_url="/not/")
+
 def notloggined(request):
     if request.method =="GET":
         return render(request, "UI/login.html")
@@ -47,7 +47,7 @@ def notloggined(request):
 
 def register(request):
     if request.method == "GET":
-        return render(request, "UI/register.html")
+        return render(request,"UI/register.html")
     elif request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
