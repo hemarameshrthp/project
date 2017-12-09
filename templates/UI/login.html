@@ -1,0 +1,25 @@
+<html>
+{% load staticfiles %}
+<head>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js\app.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+  <script type="text/javascript">
+      $('.message a').click(function(){
+      $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+      });
+  </script>
+</head>
+<body>
+  <div class="form">
+        <form class="login-form" method="post" action="/not/" >
+            {% csrf_token %}
+            <input placeholder="Email" required="" name="username"id="txtEmail" required="" autofocus="" />
+            <input type="password"placeholder="Password" name="password" required="" id="txtPassword" />
+            <button type="submit" id="btnLogin" value="Submit">LOGIN</button>
+            <p class="message a">Not Registered?   <a href="/register/">Create an account</a></p>
+    </form>
+  </div>
+</body>
+</html>

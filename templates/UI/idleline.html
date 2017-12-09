@@ -1,0 +1,33 @@
+<html>
+{% load staticfiles %}
+<script src="https://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+<script src="https://static.fusioncharts.com/code/latest/fusioncharts.charts.js"></script>
+<script src="https://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/idleline.js' %}"></script>
+<body>
+
+	<div id="chart-container">FusionCharts will render here</div>
+	<p id="demo"></p>
+	<script >
+      var dBRef1= firebase.database().ref('idlestart');
+      dBRef1.on('value',function(snap){t1=snap.val(),console.log(t1)});
+      var dBRef2= firebase.database().ref('idlestop');
+      dBRef2.on('value',function(snap){t2=snap.val()});
+	 var demo=document.getElementById('demo');
+	  var dBRef= firebase.database().ref('idlediff');
+	  dBRef.on('value',function(snap){demo.innerText=snap.val(),
+	  t=snap.val()
+	   if(t>4){
+	  	console.log(t)
+	  	var mins=String(t)
+	  	var xhr = new XMLHttpRequest();
+		xhr.open("POST", "https://smsapi.engineeringtgr.com/send/?Mobile=9600323971&Password=srsrrthp123&Message=%22The idle time exceeded for about  mins %22&To=9080032837&Key=", true);
+		xhr.send(mins);
+	  }});
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,22 @@
+<html>
+{% load staticfiles %}
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+  <script type="text/javascript">
+      $('.message a').click(function(){
+      $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+      });
+  </script>
+</head>
+<body>
+  <div class="form">
+        <form class="register-form" method="post" action="/register/" >
+            {% csrf_token %}
+            <input type="text" placeholder="Username" name="username" required="" />
+            <input type="password" placeholder="Password" name="password" required="" id="txtPassword" />
+            <button id="btnSignup" >Create</button>
+            <p class="message">Already Registered? <a href="/not/">Sign In</a></p>
+        </form>
+
+  </div>
+</body>

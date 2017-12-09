@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+.login-page {
+  width: 360px;
+
+  margin: auto;
+}
+.form {
+  position: center;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: auto;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 5px 0;
+  border-radius: 25px;
+  border-color: blue;
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  font-size: 14px;
+}
+.form select{
+ font-family: "Roboto", sans-serif;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  border:0;
+  background: darkblue;
+  width: 100%;
+  border-radius: 5px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: gray;
+  color:white;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: darkblue;
+  font-size: 12px;
+}
+.form .message a {
+  color: darkblue;
+  text-decoration: none;
+}
+.form .login-form {
+  display: all;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #4CAF50;
+  font-size: 12px;
+}
+.form .message a {
+  color: darkblue ;
+  text-decoration: none;
+}
+
+body {
+  background: #d5e0e2;
+  margin-top: 120px;
+  height: 572px;
+  width: 1368px;/* fallback for old browsers */
+}

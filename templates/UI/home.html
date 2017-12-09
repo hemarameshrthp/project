@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html xmlns:https="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="{%static 'css/home.css' %}">
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="{% static 'js/app.js' %}"></script>
+
+
+</head>
+<body>
+<div class="container">
+  <div class="statbar a"></div>
+      <div class="navbar a">
+      <a name="logout" id="btnlogout" href='/' >Logout</a>
+          <a name="dailyprogress" id="dailyprog" href="">Daily Progress</a>
+      <a name="idletime" href="/idleline/">Machine Idle</a>
+      <a name="runtime" href="/runline/">Machine Run</a>
+      <a name="settingtime" href="/settingline/">Machine Setting</a>
+      <a name="home" href="#home" >Home</a>
+
+      </div>
+</div>
+</body>
+</html>

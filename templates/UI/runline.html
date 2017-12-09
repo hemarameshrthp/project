@@ -1,0 +1,25 @@
+<html>
+{% load staticfiles %}
+<script src="https://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+<script src="https://static.fusioncharts.com/code/latest/fusioncharts.charts.js"></script>
+<script src="https://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/runline.js' %}"></script>
+<body>
+
+	<div id="chart-container">FusionCharts will render here</div>
+	<p id="demo"></p>
+	<script>
+	 var demo=document.getElementById('demo');
+	  var dBRef= firebase.database().ref('rundiff');
+	  dBRef.on('value',function(snap){demo.innerText=snap.val(),
+	  t=snap.val()
+	  if(t>4){
+	  	console.log(t)}
+	});
+    </script>
+</body>
+</html>
+
+
