@@ -76,5 +76,4 @@ def setting(request):
     serobj = SettingSer(objs, many=True)
     return JsonResponse(serobj.data, safe=False)
 
-def upload_machinestatus(request):
-    if request.method == "POST":
+
