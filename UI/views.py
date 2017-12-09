@@ -8,6 +8,7 @@ from rest_framework.renderers import JSONRenderer
 from .serilizer import MachineStatusSer,IdleSer,RunSer,SettingSer
 from .models import MachineStatus,Idle,Run,Setting
 from csv import writer
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 def main(request):
@@ -63,4 +64,10 @@ def setting(request):
     serobj = SettingSer(objs, many=True)
     return JsonResponse(serobj.data, safe=False)
 
-
+@csrf_exempt
+def postdata(request):
+    if request.method == "POST":
+        status = request.POST['status']
+        ms = MachineStatus(status=status)
+        ms.save()
+        JsonResponse("updated")

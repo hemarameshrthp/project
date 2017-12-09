@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from UI.views import home, notloggined, register, main,idleline,runline,settingline,machinestatus
+from UI.views import home, notloggined, register, main,idleline,runline,settingline,machinestatus,postdata
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'^idleline/',idleline),
     url(r'^runline/',runline),
     url(r'^settingline/',settingline),
-    url(r'^data/$',machinestatus)
+    url(r'^data/$',machinestatus),
+    url(r'^update/$',postdata),
 ]
