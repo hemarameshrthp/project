@@ -13,24 +13,11 @@ from csv import writer
 def main(request):
     return render(request,"UI/main.html")
 def idleline(request):
-    if request.method =="GET":
-        return render(request,"UI/idleline.html")
-    else:
-        return HttpResponseRedirect('/home')
-
+    return render(request,"UI/idleline.html")
 def runline(request):
-    if request.method =="GET":
-        return render(request,"UI/runline.html")
-    else:
-        return HttpResponseRedirect('/home')
-
+    return render(request,"UI/idleline.html")
 def settingline(request):
-    if request.method =="GET":
-        return render(request,"UI/settingline.html")
-    else:
-        return HttpResponseRedirect('/home')
-
-
+    return render(request,"UI/idleline.html")
 def  home(request):
     return render(request,"UI/home.html")
 
@@ -43,7 +30,7 @@ def notloggined(request):
         user= authenticate(username=username, password=password)
         if user.is_active:
             login(request, user)
-            return render(request,"UI/home.html")
+            return HttpResponseRedirect("/home/")
 
 def register(request):
     if request.method == "GET":
