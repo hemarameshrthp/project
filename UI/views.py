@@ -70,4 +70,4 @@ def postdata(request):
         status = request.POST['status']
         ms = MachineStatus(status=status)
         ms.save()
-        JsonResponse("updated")
+        JsonResponse(u'updated')
