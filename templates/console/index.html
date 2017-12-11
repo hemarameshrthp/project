@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <table>
+      <thead>
+      <tr>
+          <td>id
+          </td>
+      <td>
+          data
+      </td>
+      <td>
+          date
+      </td></tr> </thead>
+
+{% for ms in data %}
+
+    <tr>
+        <td>{{ ms.id }}</td>
+        <td>{{ ms.status }}</td>
+        <td>
+            {{ ms.date }}
+        </td>
+    </tr>
+
+{% endfor %}
+  </table>
+</body>
+</html>
