@@ -10,25 +10,18 @@
 
 	<div id="chart-container">FusionCharts will render here</div>
 	<p id="demo"></p>
-	<script >
-      var dBRef1= firebase.database().ref('idlestart');
-      dBRef1.on('value',function(snap){t1=snap.val()});
-      var dBRef2= firebase.database().ref('idlestop');
-      dBRef2.on('value',function(snap){t2=snap.val()});
-	 var demo=document.getElementById('demo');
-      var dBRef= firebase.database().ref('status');
-	  dBRef.on('value',function(snap){demo.innerText=snap.val(),
-	  t=snap.val()
-	   if(t==1){
-	  	console.log(t)
-	  	var mins=String(t)
-	  	var xhr = new XMLHttpRequest();
-		xhr.open("POST", "https://smsapi.engineeringtgr.com/send/?Mobile=9600323971&Password=srsrrthp123&Message=%22The idle time exceeded for about  mins %22&To=9080032837&Key=", true);
-		xhr.send(mins);
-	  }});
-	  var demo1=document.getElementById('demo1');
-	  var dBRef3=firebase.database().ref('idlediff');
-      dBRef3.on('value',function(snap){demo1.innerText=snap.val});
+	<script>
+        var demo=document.getElementById('demo');
+        var dBRef= firebase.database().ref('status');
+        dBRef.on('value',function(snap){demo.innerText=snap.val(),
+        t=snap.val()
+        if(t==1){
+            var mins=String(t)
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://smsapi.engineeringtgr.com/send/?Mobile=9600323971&Password=srsrrthp123&Message=%22The idle time exceeded for about  mins %22&To=9080032837&Key=", true);
+            xhr.send(mins);
+        }
+        });
     </script>
 </body>
 </html>

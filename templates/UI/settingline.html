@@ -9,15 +9,12 @@
 <body>
 
 	<div id="chart-container">FusionCharts will render here</div>
-	<p id="demo"></p>
+    <p id="demo"></p>
 	<script>
 	 var demo=document.getElementById('demo');
 	  var dBRef= firebase.database().ref('settdiff');
 	  dBRef.on('value',function(snap){demo.innerText=snap.val(),
-	  t=snap.val()
-	  if(t>4){
-	  	console.log(t)}
-	});
+	  t=snap.val()});
     </script>
 </body>
 </html>

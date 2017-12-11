@@ -19,6 +19,7 @@ def runline(request):
     return render(request,"UI/runline.html")
 def settingline(request):
     return render(request,"UI/settingline.html")
+@csrf_exempt
 def  home(request):
     return render(request,"UI/home.html")
 
@@ -70,5 +71,5 @@ def postdata(request):
         status = request.POST['status']
         ms = MachineStatus(status=status)
         ms.save()
-        JsonResponse(u'updated')
-    JsonResponse(u'error lol')
+        return HttpResponse('updated')
+    return JsonResponse('error lol')

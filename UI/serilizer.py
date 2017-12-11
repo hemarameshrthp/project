@@ -1,4 +1,4 @@
-from  .models import MachineStatus,Idle,Run,Setting
+from .models import MachineStatus,Idle,Run,Setting
 from rest_framework import serializers
 
 
